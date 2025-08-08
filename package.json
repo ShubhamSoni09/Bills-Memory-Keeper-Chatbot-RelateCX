@@ -10,6 +10,7 @@
     "build": "npm run build:backend && npm run build:frontend",
     "build:frontend": "cd src/client && react-scripts build",
     "build:backend": "tsc -p config/tsconfig.json",
+    "vercel-build": "npm run build:frontend",
     "test": "cd src/client && react-scripts test",
     "clean": "rimraf dist src/client/build"
   },

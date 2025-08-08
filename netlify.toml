@@ -7,4 +7,13 @@
 #   NODE_VERSION = "18"
 #   REACT_APP_API_BASE_URL = "https://your-backend.example.com"
 
+[[functions]]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/chat"
+  status = 200
+  force = true
+
 
