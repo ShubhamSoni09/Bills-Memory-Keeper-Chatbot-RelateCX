@@ -14,13 +14,11 @@ function App() {
   const [isTyping, setIsTyping] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  // Load messages from localStorage on component mount
   useEffect(() => {
     const savedMessages = localStorage.getItem('billsChatHistory');
     if (savedMessages) {
       try {
         const parsedMessages = JSON.parse(savedMessages);
-        // Convert timestamp strings back to Date objects
         const messagesWithDates = parsedMessages.map((msg: any) => ({
           ...msg,
           timestamp: msg.timestamp ? new Date(msg.timestamp) : new Date()
@@ -35,7 +33,6 @@ function App() {
     }
   }, []);
 
-  // Save messages to localStorage whenever chatHistory changes
   useEffect(() => {
     if (chatHistory.length > 0) {
       localStorage.setItem('billsChatHistory', JSON.stringify(chatHistory));
