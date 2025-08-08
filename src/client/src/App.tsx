@@ -145,7 +145,8 @@ function App() {
     const isEasterEgg = checkEasterEgg(messageToSend);
 
     try {
-      const response = await fetch('http://localhost:3001/api/chat', {
+      const API_BASE_URL = (process.env as any).REACT_APP_API_BASE_URL || '';
+      const response = await fetch(`${API_BASE_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userMessage: messageToSend })

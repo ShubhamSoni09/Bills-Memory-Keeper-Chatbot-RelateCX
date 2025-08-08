@@ -1,0 +1,10 @@
+[build]
+  command = "npm ci && npm run build:frontend"
+  publish = "src/client/build"
+
+# Optional: set environment here or in Netlify UI
+# [build.environment]
+#   NODE_VERSION = "18"
+#   REACT_APP_API_BASE_URL = "https://your-backend.example.com"
+
+
