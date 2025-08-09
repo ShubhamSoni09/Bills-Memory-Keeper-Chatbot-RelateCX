@@ -1,6 +1,7 @@
 [build]
   command = "npm ci && npm run build:frontend"
   publish = "src/client/build"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -14,8 +15,6 @@
 #   NODE_VERSION = "18"
 #   REACT_APP_API_BASE_URL = "https://your-backend.example.com"
 
-[[functions]]
-  directory = "netlify/functions"
 
 [[redirects]]
   from = "/api/*"
