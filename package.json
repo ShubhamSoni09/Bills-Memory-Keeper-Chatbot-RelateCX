@@ -3,18 +3,16 @@
   "version": "1.0.0",
   "description": "A chat application to discuss Buffalo Bills history with an AI fan",
   "scripts": {
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "start": "npm run dev",
-    "dev:frontend": "cd src/client && react-scripts start",
-    "dev:backend": "ts-node-dev --respawn --transpile-only src/server/index.ts",
-    "build": "npm run build:backend && npm run build:frontend",
-    "build:frontend": "cd src/client && react-scripts build",
-    "build:backend": "tsc -p config/tsconfig.json",
+    "dev": "cd client && react-scripts start",
+    "start": "cd client && react-scripts start",
+    "dev:frontend": "cd client && react-scripts start",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd client && react-scripts build",
     "vercel-build": "npm run build:frontend",
-    "test": "cd src/client && react-scripts test",
-    "clean": "rimraf dist src/client/build"
+    "test": "cd client && react-scripts test",
+    "clean": "rimraf dist client/build"
   },
-  "proxy": "http://localhost:3001",
+  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -32,10 +30,6 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "axios": "^1.11.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -43,11 +37,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
     "@netlify/functions": "^2.8.1",
-    "concurrently": "^8.2.2",
-    "rimraf": "^5.0.5",
-    "ts-node-dev": "^2.0.0"
+    "rimraf": "^5.0.5"
   }
 }
