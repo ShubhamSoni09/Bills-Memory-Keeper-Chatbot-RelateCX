@@ -4,10 +4,15 @@
   box-sizing: border-box;
 }
 
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   background: url('../images/buffalo-bills.jpg') no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
+  height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -15,9 +20,9 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 15px;
-  height: auto;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -83,6 +88,7 @@ body {
   padding: 20px;
   flex: 1;
   overflow-y: auto;
+  min-height: 0;
   margin-bottom: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   scroll-behavior: smooth;
