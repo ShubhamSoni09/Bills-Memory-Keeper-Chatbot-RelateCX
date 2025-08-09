@@ -2,6 +2,13 @@
   command = "npm ci && npm run build:frontend"
   publish = "src/client/build"
 
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = []
+
 # Optional: set environment here or in Netlify UI
 # [build.environment]
 #   NODE_VERSION = "18"
